@@ -1,3 +1,11 @@
+# See https://www.keil.com/appnotes/files/apnt_279.pdf
+# Do not include the following files:
+# Project screen layout file Project.uvguix.username
+# All files part of a Pack
+# Generated output files in Listings and Objects
+# INI files for debug adapters
+
 Listings/
 Objects/
 *.uvguix.*
+*.ini
