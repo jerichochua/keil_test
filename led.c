@@ -5,7 +5,11 @@
 #define BLUE_LED 1 // PORTD pin 1
 #define MASK(x) (1 << (x))
 
-enum color_t {RED, GREEN, BLUE};
+typedef enum {
+    RED, 
+    GREEN, 
+    BLUE
+} color_t;
 
 static void delay(volatile uint32_t nof) {
     while (nof != 0) {
@@ -33,7 +37,7 @@ void InitGPIO(void) {
     PTD->PDDR |= MASK(BLUE_LED);
 }
 
-void led_control(enum color_t color) {
+void led_control(color_t color) {
     switch (color) {
         case RED:
             PTB->PCOR = MASK(RED_LED);
